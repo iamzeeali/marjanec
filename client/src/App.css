@@ -1,0 +1,142 @@
+/* Recipt image */
+.profileImg {
+  max-width: 40px;
+  max-height: 40px;
+}
+/* .profileImg:hover {
+  max-width: 200px;
+  max-height: 200px;
+} */
+
+/***************************************************Overlay/Alert*****************************
+/* Overlay */
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Landing Page */
+.landing {
+  position: relative;
+  background: url("./components/images/landing.jpg") no-repeat center
+    center/cover;
+  height: 100vh;
+}
+
+.landing-inner {
+  color: #fff;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.landing-inner h1 {
+  color: #fff;
+}
+.profileImg {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+/* TEMP1 STYLE--START */
+@font-face {
+  font-family: "CloisterBlack";
+  src: url("./components/fonts/CloisterBlack.ttf");
+}
+@font-face {
+  font-family: "Giveny";
+  src: url("./components/fonts/Giveny.otf");
+}
+@font-face {
+  font-family: "Muli-Bold";
+  src: url("./components/fonts/muli/Muli-Bold.ttf");
+}
+
+.H1 {
+  font-family: CloisterBlack;
+  font-size: 70px;
+  color: rgb(22, 22, 22);
+  text-shadow: 2px 2px 10px rgb(78, 76, 74);
+}
+.H3 {
+  font-family: Giveny;
+  font-size: 18px;
+  font-stretch: expanded;
+  color: #c9a504;
+  text-shadow: black 1px 1px;
+  letter-spacing: 1px;
+}
+
+.topdivmain {
+  width: 281.5mm;
+  height: 215mm;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #787878;
+  background-color: rgb(247, 211, 8);
+}
+.borderMain {
+  position: relative;
+  padding: auto 10px;
+  height: 204mm;
+  width: 270mm;
+  text-align: center;
+  background-image: url("./components/images/back2.png");
+  border: 10px solid #c9a504;
+  z-index: 1;
+}
+/*   background-color:#FAF4DC;*/
+.borderdotted {
+  margin: 15px;
+  height: 192mm;
+  text-align: center;
+}
+.container1 {
+  margin: 30px;
+  height: 190mm;
+  text-align: center;
+}
+.flexbox_1 {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.flexbox_2 {
+  position: absolute;
+  height: 204.2mm;
+  width: 272mm;
+  background-image: url("./components/images/border3.png");
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
+.bottom {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.borderbottom1 {
+  width: 200px;
+  float: left;
+  border: 0;
+  border-bottom: 2px solid #000;
+  margin-right: 8px;
+}
+.borderbottom2 {
+  width: 200px;
+  float: right;
+  border: 0;
+  border-bottom: 2px solid #000;
+  margin-left: 8px;
+}
+
+/* TEMP 1STYLE ENDS */
