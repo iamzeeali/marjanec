@@ -1,16 +1,13 @@
 const Project = require("../model/projectModel");
 const factory = require("./handlerFactory");
-const APIFeatures = require('../utils/apiFeatures')
+const APIFeatures = require("../utils/apiFeatures");
 const catchAsync = require("../utils/catchAsync");
-
 
 //exports.createProject = factory.createOne(Project);
 exports.getAllProjects = factory.getAll(Project);
 exports.getProject = factory.getOne(Project);
 exports.updateProject = factory.updateOne(Project);
 exports.deleteProject = factory.deleteOne(Project);
-
-
 
 //Get Project
 // exports.getUserProjects = catchAsync(async (req, res, next) => {
@@ -28,25 +25,24 @@ exports.deleteProject = factory.deleteOne(Project);
 //     });
 // });
 
-
 // Post Project
 
 exports.createProject = catchAsync(async (req, res, next) => {
-    const { projectName, customerName, startDate, endDate, user } = req.body;
-    try {
-        const newProject = new Project({
-            projectName, customerName, startDate, endDate,
-            user: req.user.id
-        });
+  const { projectName, startDate, endDate, user } = req.body;
+  try {
+    const newProject = new Project({
+      projectName,
+      startDate,
+      endDate,
+      user: req.user.id,
+    });
 
-        const doc = await newProject.save();
-        res.status(200).json({
-            status: "success",
-            doc
-        });
-    } catch (err) {
-        res.status(500).send(err);
-    }
-
-})
-
+    const doc = await newProject.save();
+    res.status(200).json({
+      status: "success",
+      doc,
+    });
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});

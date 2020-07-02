@@ -10,18 +10,30 @@ router.use(authController.protect);
 //Restrict all router after this middleware to admin only- Authorization
 
 router
-    .route("/")
-    .get(authController.restrictTo('admin'), projectController.getAllProjects)
-    .post(authController.restrictTo('user', 'admin'), projectController.createProject);
+  .route("/")
+  .get(authController.restrictTo("admin"), projectController.getAllProjects)
+  .post(
+    authController.restrictTo("user", "admin"),
+    projectController.createProject
+  );
 
 router
-    .route("/getAll")
-    .get(authController.restrictTo('user', 'admin'), projectController.getAllProjects)
+  .route("/getAll")
+  .get(
+    authController.restrictTo("user", "admin"),
+    projectController.getAllProjects
+  );
 
 router
-    .route("/:id")
-    .get(authController.restrictTo('user', 'admin'), projectController.getProject)
-    .patch(authController.restrictTo('user', 'admin'), projectController.updateProject)
-    .delete(authController.restrictTo('user', 'admin'), projectController.deleteProject);
+  .route("/:id")
+  .get(authController.restrictTo("user", "admin"), projectController.getProject)
+  .patch(
+    authController.restrictTo("user", "admin"),
+    projectController.updateProject
+  )
+  .delete(
+    authController.restrictTo("user", "admin"),
+    projectController.deleteProject
+  );
 
 module.exports = router;
