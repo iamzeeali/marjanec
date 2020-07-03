@@ -18,7 +18,7 @@ const Navbar = (
             <div className="col-md-12">
               <nav className="navbar navbar-expand-lg  navigation">
                 <Link className="navbar-brand" to="/">
-                  <img src={logo} alt="globus labs logo" width="150px" />
+                  <img src={logo} alt="globus labs logo" width="250px" />
                 </Link>
                 <button
                   className="navbar-toggler"
@@ -177,7 +177,7 @@ const Navbar = (
       <nav className="navbar navbar-expand-lg navbar-light bg-primary">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            <img src={logo} alt="logo" width="150px" />
+            <img src={logo} alt="logo" width="250px" />
           </Link>
           <button
             className="navbar-toggler"
