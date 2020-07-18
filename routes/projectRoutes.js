@@ -11,7 +11,10 @@ router.use(authController.protect);
 
 router
   .route("/")
-  .get(authController.restrictTo("admin"), projectController.getAllProjects)
+  .get(
+    authController.restrictTo("admin", "user"),
+    projectController.getAllProjects
+  )
   .post(
     authController.restrictTo("user", "admin"),
     projectController.createProject
