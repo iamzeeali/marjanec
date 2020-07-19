@@ -27,28 +27,34 @@ router
 
 router
   .route("/total/:id")
-  .get(authController.restrictTo("admin"), expenseController.getTotalExpenses);
+  .get(
+    authController.restrictTo("admin", "user"),
+    expenseController.getTotalExpenses
+  );
 
 router
   .route("/Usertotal/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     expenseController.getUsersTotalExpenses
   );
 router
   .route("/monthTotal/:year")
-  .get(authController.restrictTo("admin"), expenseController.getMonthExpenses);
+  .get(
+    authController.restrictTo("admin", "user"),
+    expenseController.getMonthExpenses
+  );
 router
   .route("/usermonthTotal/:year/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     expenseController.getUserMonthExpenses
   );
 
 router
   .route("/filter/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     expenseController.getFilteredExpenses
   );
 

@@ -28,32 +28,32 @@ router
 router
   .route("/total/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getTotalInvestments
   );
 
 router
   .route("/Usertotal/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getUsersTotalInvestments
   );
 router
   .route("/monthTotal/:year")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getMonthInvestments
   );
 router
   .route("/usermonthTotal/:year/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getUserMonthInvestments
   );
 router
   .route("/filter/:id")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getFilteredInvestments
   );
 
