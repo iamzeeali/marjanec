@@ -44,7 +44,7 @@ const UserMonthlyExpense = ({
                     {" "}
                     <h2 className="pt-2">
                       {" "}
-                      {username2[0]}'s {match.params.year} expenses{" "}
+                      {username2[0]} {match.params.year} expenses{" "}
                     </h2>
                   </div>
                   <div className="col-sm-3">

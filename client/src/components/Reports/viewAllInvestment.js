@@ -38,7 +38,7 @@ const ViewAllInvestment = ({
       key={user._id}
     >
       {" "}
-      {user.firstName}
+      {user.firstName && user.firstName}
     </Link>
   ));
 

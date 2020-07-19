@@ -28,7 +28,6 @@ const ViewUsersInvestment = ({
       // Math.round((user.totalAmount * 100) / 10)
       user.totalAmount
   );
-  console.log(UserSumTotal);
   return (
     <Fragment>
       <div className="container-fluid">

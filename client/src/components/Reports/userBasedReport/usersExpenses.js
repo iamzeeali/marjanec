@@ -45,7 +45,10 @@ const ViewUsersExpense = ({
                   </div>
                   <div className="col-sm-6">
                     {" "}
-                    <h2 className="pt-2">{firstName}'s all expenses </h2>
+                    <h2 className="pt-2">
+                      {" "}
+                      {usersExpenses.map((ue) => ue.firstName)}'s all expenses{" "}
+                    </h2>
                   </div>
                   <div className="col-sm-4">
                     {" "}
@@ -84,7 +87,7 @@ const ViewUsersExpense = ({
                               className="profileImg"
                             ></img>
                           </td>
-                          <td>{`${expense.user.firstName}`}</td>
+                          <td>{`${expense.user && expense.user.firstName}`}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -111,7 +114,6 @@ const mapStateToProps = (state) => ({
   loading: state.expense.loading,
   usersExpenses: state.expense.usersExpenses,
   usersSumExp: state.expense.usersSumExp,
-  firstName: state.expense.firstName,
 });
 export default connect(mapStateToProps, { userExpense, userTotalExpense })(
   ViewUsersExpense

@@ -81,43 +81,43 @@ const ViewAllExpenses = ({
     <Fragment>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2018}`}
+        to={`/admin/expenses/monthExpense/${2018}`}
       >
         2018
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2019}`}
+        to={`/admin/expenses/monthExpense/${2019}`}
       >
         2019
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2020}`}
+        to={`/admin/expenses/monthExpense/${2020}`}
       >
         2020
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2021}`}
+        to={`/admin/expenses/monthExpense/${2021}`}
       >
         2021
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2022}`}
+        to={`/admin/expenses/monthExpense/${2022}`}
       >
         2022
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2023}`}
+        to={`/admin/expenses/monthExpense/${2023}`}
       >
         2023
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthInvestment/${2024}`}
+        to={`/admin/expenses/monthExpense/${2024}`}
       >
         2024
       </Link>
