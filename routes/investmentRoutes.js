@@ -22,7 +22,7 @@ router.use(authController.protect);
 router
   .route("/getAll")
   .get(
-    authController.restrictTo("admin"),
+    authController.restrictTo("admin", "user"),
     investmentController.getAllInvestments
   );
 router

@@ -55,7 +55,10 @@ const InvestmentMaster = ({
                     <tbody>
                       {investments.map((investment) => (
                         <tr key={investment._id}>
-                          <td>{investment.project.projectName}</td>
+                          <td>
+                            {investment.project.projectName &&
+                              investment.project.projectName}
+                          </td>
                           <td>{`${investment.amount} ${investment.currency}`}</td>
                           <td>${`${investment.convAmt}`}</td>
                           <td>

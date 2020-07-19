@@ -64,12 +64,7 @@ const Login = ({ login, isAuthenticated }) => {
                     <button type="submit" className="btn btn-primary btn-block">
                       Log in
                     </button>
-                    <Link
-                      className="mt-3 d-block  text-primary"
-                      to="/forgetPassword"
-                    >
-                      Forget Password?
-                    </Link>
+
                     <Link
                       className="mt-3 d-inline-block text-primary"
                       to="/register"
