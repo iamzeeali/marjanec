@@ -55,7 +55,7 @@ const ProjectMaster = ({
                           <td>{project.projectName}</td>
                           <td>{project.startDate}</td>
                           <td>{project.endDate}</td>
-                          <td className="text-right">
+                          <td className="">
                             <Link
                               to={`/project/editProject/${project._id}`}
                               onClick={() => setCurrentProject(project)}
