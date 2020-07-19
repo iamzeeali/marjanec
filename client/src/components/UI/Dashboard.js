@@ -91,6 +91,7 @@ const Dashboard = ({
                         Total Investment
                       </div>
                       <div className="circle-tile-number text-faded ">
+                        ${" "}
                         {!totalInvest[0]
                           ? 0
                           : parseFloat(totalInvest).toFixed(2)}
@@ -111,6 +112,7 @@ const Dashboard = ({
                         Total Expense
                       </div>
                       <div className="circle-tile-number text-faded ">
+                        ${" "}
                         {!totalExpense[0]
                           ? 0
                           : parseFloat(totalExpense).toFixed(2)}
@@ -151,7 +153,7 @@ const Dashboard = ({
                         Balance
                       </div>
                       <div className="circle-tile-number text-faded ">
-                        {balanceRemaining}
+                        $ {balanceRemaining}
                       </div>
                     </div>
                   </div>
