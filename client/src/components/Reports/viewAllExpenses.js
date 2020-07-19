@@ -77,48 +77,47 @@ const ViewAllExpenses = ({
   };
 
   const { year, id } = formData;
-
   let yearOption = (
     <Fragment>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2018}`}
+        to={`/admin/expenses/monthInvestment/${2018}`}
       >
         2018
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2019}`}
+        to={`/admin/expenses/monthInvestment/${2019}`}
       >
         2019
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2020}`}
+        to={`/admin/expenses/monthInvestment/${2020}`}
       >
         2020
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2021}`}
+        to={`/admin/expenses/monthInvestment/${2021}`}
       >
         2021
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2022}`}
+        to={`/admin/expenses/monthInvestment/${2022}`}
       >
         2022
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2023}`}
+        to={`/admin/expenses/monthInvestment/${2023}`}
       >
         2023
       </Link>
       <Link
         className="dropdown-item"
-        to={`/admin/expenses/monthExpense/${2024}`}
+        to={`/admin/expenses/monthInvestment/${2024}`}
       >
         2024
       </Link>
@@ -128,130 +127,121 @@ const ViewAllExpenses = ({
   return (
     <Fragment>
       <div className="container-fluid">
-        <section className="container-fluid mt-4  justify-content-center ">
-          <div className="container">
-            <div className="row justify-content-center animated fadeIn">
-              <div className="col-lg-12 col-md-10 align-item-center">
-                <h2 className="text-center pt-2">View All Expenses </h2>
+        <section className="container-fluid mt-2  justify-content-center ">
+          <div className="container  animated fadeIn ">
+            <div className="justify-content-center ">
+              <h2 className="text-center pt-2"> View All Expenses </h2>{" "}
+            </div>
 
-                <div className="row">
-                  <div className="dropdown show mr-2">
-                    <Link
-                      className="btn btn-secondary dropdown-toggle"
-                      role="button"
-                      id="dropdownMenuLink"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Select User
-                    </Link>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuLink"
-                    >
-                      {userOption}
-                    </div>
-                  </div>
-                  <div className="dropdown show ml-2">
-                    <Link
-                      className="btn btn-secondary dropdown-toggle"
-                      role="button"
-                      id="dropdownMenuLink"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Select Year
-                    </Link>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuLink"
-                    >
-                      {yearOption}
-                    </div>
-                  </div>
-
-                  <div className="row border border-dark ml-4">
-                    <select
-                      className="btn btn-secondary btn-sm dropdown-toggle mr-2"
-                      name="year"
-                      value={year}
-                      onChange={(e) => onChangeHandler(e)}
-                      required
-                    >
-                      <option>Select Year</option>
-                      {yearOption2}
-                    </select>
-
-                    <select
-                      className="btn btn-secondary btn-sm dropdown-toggle ml-2"
-                      name="id"
-                      value={id}
-                      onChange={(e) => onChangeHandler(e)}
-                      required
-                    >
-                      <option>Select User</option>
-                      {userOption2}
-                    </select>
-                    <Link
-                      className="btn btn-dark"
-                      type="submit"
-                      to={`/admin/expenses/usermonthExpense/${year}/${id}`}
-                    >
-                      Submit
-                    </Link>
-                  </div>
+            <div className="row  d-flex justify-content-around">
+              <div className=" row-sm-6 col-md-5  d-flex justify-content-around">
+                <div className="col-sm-2 btn-group mr-2 indexz">
+                  <button
+                    type="button"
+                    className="btn  dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Select User
+                  </button>
+                  <div className="dropdown-menu indexz">{userOption}</div>
                 </div>
 
-                <br />
-                <div className="row">
-                  <table
-                    className="table table-hover table-responsive-md mt-2"
-                    id="table-exp"
+                <div className="col-sm-2 btn-group mr-2 indexz">
+                  <button
+                    type="button"
+                    className="btn  dropdown-toggle"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    <thead className="thead-dark">
-                      <tr>
-                        <th scope="col">Project</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Amount($)</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Purpose</th>
-                        <th scope="col">Receipt</th>
-                        <th scope="col">Username</th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      {allexpenses.map((expense) => (
-                        <tr key={expense._id}>
-                          <td>{expense.project.projectName}</td>
-                          <td>{`${expense.amount} ${expense.currency}`}</td>
-                          <td>${`${expense.convAmt}`}</td>
-                          <td>{moment(expense.date).format("DD-MM-YYYY")}</td>
-                          <td>{`${expense.purpose}`}</td>
-                          <td>
-                            <img
-                              src={`${process.env.PUBLIC_URL}/uploads/${expense.image}`}
-                              alt={expense.image}
-                              className="profileImg"
-                            ></img>
-                          </td>
-                          <td>{`${expense.user.username}`}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <ReactToExcel
-                    className=" btn btn-danger "
-                    table="table-exp" // id of table which you want to export
-                    filename={`exp-${Date.now()}`} // name of the file
-                    sheet="sheet"
-                    buttonText="Export Table" // button name
-                  />
+                    Select Year
+                  </button>
+                  <div className="dropdown-menu indexz">{yearOption}</div>
                 </div>
               </div>
+
+              <div className="row-sm-12  d-flex justify-content-around  mt-2 border_round ">
+                <select
+                  className="btn btn-sm dropdown-toggle mr-2"
+                  name="year"
+                  value={year}
+                  onChange={(e) => onChangeHandler(e)}
+                  required
+                >
+                  <option>Select Year</option>
+                  {yearOption2}
+                </select>
+
+                <select
+                  className="btn  btn-sm dropdown-toggle ml-2"
+                  name="id"
+                  value={id}
+                  onChange={(e) => onChangeHandler(e)}
+                  required
+                >
+                  <option>Select User</option>
+                  {userOption2}
+                </select>
+
+                <Link
+                  className="btn"
+                  type="submit"
+                  to={`/admin/expenses/usermonthExpense/${year}/${id}`}
+                >
+                  <i className="fa fa-search"></i>
+                </Link>
+              </div>
             </div>
+          </div>
+
+          <br />
+
+          <div className="container justify-content-center ">
+            <table
+              className="table table-bordered table-hover table-responsive-md mt-2"
+              id="table-exp"
+            >
+              <thead className="thead-dark">
+                <tr>
+                  <th scope="col">Project</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Amount($)</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Purpose</th>
+                  <th scope="col">Receipt</th>
+                  <th scope="col">User</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {allexpenses.map((expenses) => (
+                  <tr key={expenses._id}>
+                    <td>{expenses.project.projectName}</td>
+                    <td>{`${expenses.amount} ${expenses.currency}`}</td>
+                    <td>${`${expenses.convAmt}`}</td>
+                    <td>{moment(expenses.date).format("DD-MM-YYYY")}</td>
+                    <td>{`${expenses.purpose}`}</td>
+                    <td>
+                      <img
+                        src={`${process.env.PUBLIC_URL}/uploads/${expenses.image}`}
+                        alt={expenses.image}
+                        className="profileImg"
+                      ></img>
+                    </td>
+                    <td>{`${expenses.user.firstName}`}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <ReactToExcel
+              className=" btn btn-danger "
+              table="table-exp" // id of table which you want to export
+              filename={`exp-${Date.now()}`} // name of the file
+              sheet="sheet"
+              buttonText="Export Table" // button name
+            />
           </div>
         </section>
       </div>

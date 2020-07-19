@@ -57,7 +57,9 @@ const ExpenseMaster = ({
                     <tbody>
                       {expenses.map((expense) => (
                         <tr key={expense._id}>
-                          <td>{expense.project.projectName}</td>
+                          <td>
+                            {expense.project && expense.project.projectName}
+                          </td>
                           <td>{`${expense.amount} ${expense.currency}`}</td>
                           <td>${`${expense.convAmt}`}</td>
                           <td>{moment(expense.date).format("DD-MM-YYYY")}</td>

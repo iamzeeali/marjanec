@@ -20,7 +20,10 @@ router.use(authController.protect);
 
 router
   .route("/getAll")
-  .get(authController.restrictTo("admin"), expenseController.getAllExpenses);
+  .get(
+    authController.restrictTo("admin", "user"),
+    expenseController.getAllExpenses
+  );
 
 router
   .route("/total/:id")

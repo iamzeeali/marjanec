@@ -1,4 +1,4 @@
-/* Receipt image */
+/* Recipt image */
 .profileImg {
   max-width: 40px;
   max-height: 40px;
@@ -7,10 +7,6 @@
   max-width: 200px;
   max-height: 200px;
 } */
-
-.yearoption {
-  z-index: 1000;
-}
 
 /***************************************************Overlay/Alert*****************************
 /* Overlay */
@@ -26,7 +22,8 @@
 /* Landing Page */
 .landing {
   position: relative;
-
+  background: url("./components/images/landing.jpg") no-repeat center
+    center/cover;
   height: 100vh;
 }
 
@@ -34,6 +31,7 @@
   color: #fff;
   height: 100%;
   width: 80%;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,5 +138,28 @@
   border-bottom: 2px solid #000;
   margin-left: 8px;
 }
+.indexz {
+  z-index: 10000;
+  position: static;
+}
 
+.button {
+  font-family: "Muli", sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn2 {
+  font-size: 9px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 2px 5px 2px 2px;
+  border-radius: 10px;
+}
 /* TEMP 1STYLE ENDS */
+
+.border_round {
+  border: #000 solid;
+  border-radius: 40px;
+}
