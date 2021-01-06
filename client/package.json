@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@mdi/font": "^4.9.95",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "chart.js": "^2.9.3",
     "classnames": "^2.2.6",
     "currency-flags": "^2.1.2",
